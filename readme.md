@@ -19,7 +19,7 @@
 cd /home/hmcl/hmcl-unist.github.io
 python3 -m http.server 8000
 ```
-브라우저에서 `http://localhost:8000` 접속.
+브라우저에서 `http://localhost:8000` 접속. 
 
 필수 점검:
 1. 수정한 페이지가 정상 렌더링되는지
