@@ -29,7 +29,7 @@ python3 -m http.server 8000
 
 ## 3) 페이지 수정 방법
 1. 해당 폴더의 `index.html` 수정
-2. 이미지 추가 시 같은 페이지의 `media/<year>/`에 파일 저장
+2. 이미지 추가 시 같은 페이지의 `media/<year>/`에 파일 저장 
 3. HTML 경로 연결
 
 예시:
