@@ -1,0 +1,9 @@
+(() => { const init=()=>{
+ document.querySelectorAll('.header-inner .logo a').forEach(a=>{a.setAttribute('aria-label','HMCL home');a.title='High-assurance Mobility Control Lab.';const img=a.querySelector('img');if(img){img.src='https://hmcl-unist.github.io/media/2020/lab_Logo.jpg';img.alt='HMCL · UNIST';}});
+ document.querySelectorAll('header a').forEach(a=>{if(a.textContent.trim()==='Research'&&a.getAttribute('href')==='/hmc/cyber-physical-system-cps.do')a.href='/hmc/research-overview.do';if(a.getAttribute('href')==='/hmc/research-overview.do'&&a.textContent.trim()==='Research Overview'){const item=a.closest('li');if(item)item.parentElement.prepend(item);}});
+ const reduce=matchMedia('(prefers-reduced-motion: reduce)');
+ if(reduce.matches||!window.IntersectionObserver||!Element.prototype.animate)return;
+ const observer=new IntersectionObserver(items=>{for(const item of items){if(!item.isIntersecting)continue;observer.unobserve(item.target);if(!reduce.matches)item.target.animate([{opacity:.35,transform:'translateY(16px)'},{opacity:1,transform:'translateY(0)'}],{duration:450,delay:Number(item.target.dataset.hmcDelay||0),easing:'cubic-bezier(.16,1,.3,1)'});}},{threshold:.08});
+ document.querySelectorAll('.hmc-cms-page .hmcl-event,.hmc-cms-page .hmcl-research-item,.hmc-cms-page .hmcl-highlight,.hmc-cms-page .hmcl-research-directions>a,.migration-hmc-members .member-card').forEach((el,i)=>{el.dataset.hmcDelay=String(i%3*70);observer.observe(el);});
+ reduce.addEventListener('change',()=>{if(reduce.matches){observer.disconnect();document.querySelectorAll('[data-hmc-delay]').forEach(el=>el.getAnimations().forEach(a=>a.cancel()));}});
+ }; if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init,{once:true});else init();})();

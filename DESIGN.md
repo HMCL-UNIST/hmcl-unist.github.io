@@ -78,6 +78,16 @@ standalone document into one CMS content block. Publish there only after review.
 
 ## Preview operation
 
+## Official CMS application — 2026-10-29
+
+At the user's explicit request, the approved home layout, HMCL logo, original-
+content Research Overview, member-photo whitespace fixes and motion were saved
+through JiniWorks. The native professor panel and AD/AF records were retained.
+See `cms-transfer/README.md` for the applied source, original backup location,
+CMS routes and the current dependency on public GitHub image URLs.
+
+## Preview operation
+
 Run `python3 -m http.server 8765 --bind 127.0.0.1` at the repository root.
 Check the home, publications, alumni and gallery at desktop and mobile widths.
 GitHub preview pages carry `noindex, nofollow`; the separate UnicornRacing site
