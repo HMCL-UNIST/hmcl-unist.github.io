@@ -76,8 +76,6 @@ For JiniWorks transfer, map the header/footer, sub-template, main-template and
 body components to CMS equivalents. Scope styles to HMC; do not paste an entire
 standalone document into one CMS content block. Publish there only after review.
 
-## Preview operation
-
 ## Official CMS application — 2026-10-29
 
 At the user's explicit request, the approved home layout, HMCL logo, original-
