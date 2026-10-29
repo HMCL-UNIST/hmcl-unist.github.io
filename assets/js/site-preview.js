@@ -31,7 +31,6 @@
   if (header) {
     header.className = 'hmcl-header';
     header.innerHTML = `<a class="hmcl-skip" href="#main">Skip to content</a>
-      <div class="hmcl-preview"><div class="hmcl-container"><span class="hmcl-preview-label">HMCL design preview · GitHub test site</span><a href="${official}">Official UNIST website ↗</a></div></div>
       <div class="hmcl-container hmcl-header-row">
         <a href="/" class="hmcl-brand" aria-label="HMCL home"><img src="/media/2020/lab_Logo.jpg" alt="High-assurance Mobility Control Lab. · UNIST" width="240" height="58"></a>
         <button class="hmcl-menu-button" type="button" aria-controls="hmcl-nav" aria-expanded="false">Menu</button>

@@ -19,7 +19,9 @@ not to the reference site's unrelated introduction or stock laboratory images.
   margins. Breakpoints at 1,100px and 700px.
 - Existing HMCL logo and actual research, racing, and lab photos. No generated
   photographs, institutional claims, metrics, or testimonials.
-- Home: research introduction and racing photo, research topics, recent
+- Home: a dominant, uncropped lab group photo with a navy introduction panel;
+  the reference's campus Laboratory card and navy Research Topic card beneath.
+  Mobile puts the group photo first. Further sections include research topics, recent
   publications, lab members, gallery, recruitment, and the existing racing video.
 - Subpages: shared title band, professor profile sidebar on large screens,
   white main panel, navigation tabs for members and publication categories.
@@ -28,7 +30,8 @@ not to the reference site's unrelated introduction or stock laboratory images.
 
 ## Interaction
 
-Sticky header with a visible design-preview notice and official UNIST link.
+Simple white sticky header with the actual HMCL logo and black navigation,
+matching the user's reference. Design-preview notice and official link live in the footer.
 Desktop navigation supports pointer hover, keyboard focus and submenu toggles.
 Mobile uses an explicit Menu button and separate submenu buttons. Escape closes
 open navigation. Visible focus outlines and reduced-motion rules are included.
