@@ -27,6 +27,12 @@ not to the reference site's unrelated introduction or stock laboratory images.
   white main panel, navigation tabs for members and publication categories.
 - Alumni and other member rows become two-column cards on desktop, one column
   on mobile. Gallery indexes use four columns on desktop and two on mobile.
+- Home and subpage professor panels follow the CMS structure: portrait, name,
+  Major Research Field, Lab (Bldg. 112 Rm. 806), Email and Contact. They remain
+  sticky below the header, stop before the footer, and can scroll internally on
+  short screens. Compact screens hide the panel; Professor and Contact remain
+  available in navigation. The home group photograph appears only in the hero;
+  its previous repeated section now introduces UNICORN Racing with the car photo.
 
 ## Interaction
 

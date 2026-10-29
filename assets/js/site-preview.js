@@ -66,20 +66,33 @@
       <div><h3>Explore HMCL</h3><p><a href="${official}">Official UNIST website ↗</a></p><p><a href="https://github.com/HMCL-UNIST">Open-source research on GitHub ↗</a></p><p><a href="/gallery/videos/">Research videos</a> · <a href="/members/">Our people</a></p></div>
       </div><div class="hmcl-footer-bottom"><p>© ${new Date().getFullYear()} HMCL · UNIST. All rights reserved.</p><p>Design preview. Approved changes are transferred to the official website.</p></div></div>`;
   }
+  const icon = shape => `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">${shape}</svg>`;
+  const aside = document.createElement('aside');
+  aside.className = 'hmcl-profile';
+  aside.setAttribute('aria-label','Professor and laboratory information');
+  aside.innerHTML = `<a href="/members/professor/" class="hmcl-profile-photo"><img src="/members/professor/media/2019/cheolhyeon-kwon.jpg" alt="Cheolhyeon Kwon" width="300" height="300"></a><div class="hmcl-profile-name"><span>Associate Professor</span><h2>CHEOLHYEON KWON</h2></div><div class="hmcl-profile-details">
+    <div><h3>${icon('<path d="M20 13 13 20a2 2 0 0 1-3 0l-7-7V3h10l7 7a2 2 0 0 1 0 3Z"/><circle cx="7.5" cy="7.5" r="1"/>')}Major Research Field</h3><p>Cyber-Physical System (CPS), Intelligent and High Assurance Autonomy, Networked Multi-Agent Systems (MAS), Fault Tolerant Control (FTC)</p></div>
+    <div><h3>${icon('<path d="M20 10c0 6-8 11-8 11S4 16 4 10a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10" r="3"/>')}Lab</h3><p>Bldg. 112 Rm. 806</p></div>
+    <div><h3>${icon('<rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 6 9 7 9-7"/>')}Email</h3><p><a href="mailto:kwonc@unist.ac.kr">kwonc@unist.ac.kr</a></p></div>
+    <div><h3>${icon('<path d="m8 3 3 5-3 3a16 16 0 0 0 5 5l3-3 5 3v3a2 2 0 0 1-2 2C10 21 3 14 3 5a2 2 0 0 1 2-2Z"/>')}Contact</h3><p><a href="tel:+82522172433">052-217-2433</a></p></div></div>`;
+  if (document.body.classList.contains('hmcl-home')) {
+    const main = document.querySelector('#main');
+    const shell = document.createElement('div');
+    shell.className = 'hmcl-home-layout';
+    main.before(shell);
+    shell.append(aside, main);
+    return;
+  }
   const entry = document.querySelector('.entry-content');
   const titleNode = document.querySelector('.entry-title');
   const layout = document.querySelector('.layout-fixed');
-  if (document.body.classList.contains('hmcl-home') || !entry || !layout || !titleNode) return;
+  if (!entry || !layout || !titleNode) return;
   const title = titleNode.textContent.trim();
   const banner = document.createElement('section');
   banner.className = 'hmcl-page-banner';
   banner.innerHTML = `<div class="hmcl-container"><h1>${escape(title)}</h1><p><a href="/">Home</a> / ${escape(current?.name || title)}${current?.name !== title ? ' / '+escape(title):''}</p></div>`;
   layout.before(banner);
   layout.classList.add('hmcl-with-sidebar');
-  const aside = document.createElement('aside');
-  aside.className = 'hmcl-profile';
-  aside.setAttribute('aria-label','Lab director');
-  aside.innerHTML = `<img src="/members/professor/media/2019/cheolhyeon-kwon.jpg" alt="Cheolhyeon Kwon" width="300" height="300"><div class="hmcl-profile-name"><span>Associate Professor</span><h2>Cheolhyeon Kwon</h2></div><div class="hmcl-profile-details"><p><strong>High-assurance Mobility Control Lab.</strong>Mechanical Engineering, UNIST</p><p><strong>Research</strong>Cyber-Physical Systems<br>Intelligent Autonomy<br>Networked Multi-Agent Systems<br>Fault Tolerant Control</p><p><a href="/members/professor/">Professor profile →</a></p><p><a href="mailto:kwonc@unist.ac.kr">kwonc@unist.ac.kr</a></p></div>`;
   layout.prepend(aside);
   if (path.startsWith('/publications-hmc')) document.body.classList.add('hmcl-publications');
   if (current?.links && (path.startsWith('/publications-hmc') || path.startsWith('/members'))) {
