@@ -32,7 +32,8 @@ not to the reference site's unrelated introduction or stock laboratory images.
   sticky below the header, stop before the footer, and can scroll internally on
   short screens. Compact screens hide the panel; Professor and Contact remain
   available in navigation. The home group photograph appears only in the hero;
-  its previous repeated section now introduces UNICORN Racing with the car photo.
+  the repeated group-photo section and its replacement racing promotion have
+  been removed at the user's request.
 
 ## Interaction
 
