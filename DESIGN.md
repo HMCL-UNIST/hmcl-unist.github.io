@@ -44,6 +44,27 @@ open navigation. Visible focus outlines and reduced-motion rules are included.
 
 ## Implementation and CMS transfer
 
+### Research overview, members and motion
+
+Research Overview reuses the existing CPS research-purpose paragraphs and
+the original CPS control-methods diagram, with existing AD/AF research-topic
+headings and photographs. Do not invent a new research narrative, sequence or
+framework: the user explicitly requires existing descriptions to be reused.
+Graduate membership follows the official CMS AD and AF pages checked 2026-10-29:
+AD 11, AF 10. Email identifiers distinguish the two Sanghun Lee entries.
+Member photos occupy their own rounded image area on white, without a gray
+column continuing below the photograph. Original biography content is preserved.
+
+CMS transfer must include these interaction behaviors: linked photographs zoom
+2.5% on hover and 4% while pressed; buttons show a brief pressed state; member,
+gallery and research lists enter once as they reach the viewport (450ms,
+70ms stagger capped at 140ms). There is no looping or scroll hijacking.
+IntersectionObserver and Web Animations implement this without dependencies.
+Content stays visible if JavaScript fails. Reduced-motion disables spatial
+effects, and changing the preference cancels active entrance animations.
+Port the behavior to CMS components or its animation settings and verify both
+desktop and mobile there; copying static HTML alone is insufficient.
+
 `assets/css/site-preview.css` owns shared styling. `assets/js/site-preview.js`
 owns the preview shell and presents original member/gallery markup as cards.
 The static citations, names and source media remain in their original pages.

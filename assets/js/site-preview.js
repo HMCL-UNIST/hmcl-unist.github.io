@@ -12,7 +12,8 @@
     ]},
     {name: 'Members', href: '/members/', links: [
       ['Professor', '/members/professor/'], ['Post-Doc', '/members/post-doc/'],
-      ['Graduate Students', '/members/graduate/'], ['Alumni', '/members/alumni/']
+      ['Graduate Students', '/members/graduate/'], ['AD Group', '/members/graduate/#ad-group'],
+      ['AF Group', '/members/graduate/#af-group'], ['Alumni', '/members/alumni/']
     ]},
     {name: 'Publications', href: '/publications-hmc/', links: [
       ['Journal Articles', '/publications-hmc/journal-articles-hmc/'],
@@ -81,6 +82,7 @@
     shell.className = 'hmcl-home-layout';
     main.before(shell);
     shell.append(aside, main);
+    setupMotion();
     return;
   }
   const entry = document.querySelector('.entry-content');
@@ -124,7 +126,35 @@
         if (heading) { grid.append(heading); row.remove(); }
       }
     }
-    if (grid.querySelector('.hmcl-member')) entry.prepend(grid);
+    if (grid.querySelector('.hmcl-member')) {
+      if (path === '/members/graduate') {
+        // Membership verified against the official CMS AD/AF pages, 2026-10-29.
+        // Email distinguishes the two students named Sanghun Lee.
+        const members = {
+          ad: ['bin2915','lsh0527','ryujs','dbs2911','shineejoon','dls6dud','hgcho','nueag2','heedo7425','lees','dnrwls04'],
+          af: ['sanghun17','jusang53','yjchun','chan6708','qkrrlvy77','dbswkrud1289','alvinin03','dlarlgns1025','khyoon','jhlee12']
+        };
+        const nav = document.createElement('nav');
+        nav.className = 'hmcl-group-nav';
+        nav.setAttribute('aria-label','Graduate research groups');
+        nav.innerHTML = '<a href="#ad-group">AD · Autonomous Driving</a><a href="#af-group">AF · Autonomous Flight</a>';
+        const groups = document.createElement('div');
+        for (const [key,label] of [['ad','AD Group · Autonomous Driving'],['af','AF Group · Autonomous Flight']]) {
+          const section = document.createElement('section');
+          section.className = 'hmcl-graduate-group';
+          section.id = key+'-group';
+          section.setAttribute('aria-labelledby',key+'-title');
+          section.innerHTML = `<h2 id="${key}-title">${label}</h2><div class="hmcl-members-grid"></div>`;
+          for (const card of [...grid.querySelectorAll('.hmcl-member')]) {
+            const email = card.textContent.match(/[A-Za-z0-9._+-]+@unist\.ac\.kr/i)?.[0]?.toLowerCase();
+            if (email && members[key].includes(email.split('@')[0])) section.lastElementChild.append(card);
+          }
+          groups.append(section);
+        }
+        // Keep any future unclassified additions visible rather than dropping them.
+        entry.prepend(nav, groups, grid);
+      } else entry.prepend(grid);
+    }
   }
   if (/^\/gallery\/(20\d{2}|2019-2020)$/.test(path)) {
     document.body.classList.add('hmcl-gallery');
@@ -146,5 +176,30 @@
       entry.prepend(years, grid);
       entry.querySelectorAll('.vc_row').forEach(row=>{if(row.querySelector('.vc_btn3-container')) row.remove();});
     }
+  }
+  setupMotion();
+
+  function setupMotion() {
+    const preference = matchMedia('(prefers-reduced-motion: reduce)');
+    if (preference.matches || !('IntersectionObserver' in window) || !Element.prototype.animate) return;
+    const observer = new IntersectionObserver(entries => {
+      for (const item of entries) {
+        if (!item.isIntersecting) continue;
+        observer.unobserve(item.target);
+        if (!preference.matches) item.target.animate([
+          {opacity:.35, transform:'translateY(16px)'},
+          {opacity:1, transform:'translateY(0)'}
+        ], {duration:450, delay:Number(item.target.dataset.motionDelay || 0), easing:'cubic-bezier(.16,1,.3,1)'});
+      }
+    }, {threshold:.08});
+    document.querySelectorAll('.hmcl-member, .hmcl-gallery-grid>.wpb_column, .hmcl-research-directions>a, .hmcl-research-flow>li, .hmcl-home-highlights>a, .hmcl-event, .hmcl-research-item').forEach((node,index) => {
+      node.dataset.motionDelay = String((index % 3) * 70);
+      observer.observe(node);
+    });
+    preference.addEventListener('change', () => {
+      if (!preference.matches) return;
+      observer.disconnect();
+      document.querySelectorAll('[data-motion-delay]').forEach(node=>node.getAnimations().forEach(animation=>animation.cancel()));
+    });
   }
 })();
