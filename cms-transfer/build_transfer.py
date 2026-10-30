@@ -88,7 +88,7 @@ script='''(() => { const init=()=>{
  document.querySelectorAll('.header-inner .logo a').forEach(a=>{a.setAttribute('aria-label','HMCL home');a.title='High-assurance Mobility Control Lab.';const img=a.querySelector('img');if(img){img.src='https://hmcl-unist.github.io/media/2020/lab_Logo.jpg';img.alt='HMCL · UNIST';}});
  document.querySelectorAll('header a').forEach(a=>{if(a.textContent.trim()==='Research'&&a.getAttribute('href')==='/hmc/cyber-physical-system-cps.do')a.href='/hmc/research-overview.do';if(a.getAttribute('href')==='/hmc/research-overview.do'&&a.textContent.trim()==='Research Overview'){const item=a.closest('li');if(item)item.parentElement.prepend(item);}});
  document.querySelectorAll('a[href*="articleNo=311451"] .b-img-box img').forEach(img=>{img.src='https://hmcl-unist.github.io/gallery/2026/media/2026/2026-unist-creative-design-festival-600x450.jpg';img.alt='2026 UNIST Creative Design Festival';});
- document.querySelectorAll('.main-left a').forEach(a=>{if(a.textContent.trim()==='More Informaiton'){a.textContent='Professor profile';a.href='/hmc/professor.do';}});
+ document.querySelectorAll('.main-left a').forEach(a=>{if(a.textContent.trim()==='More Informaiton'){a.textContent='Professor profile';a.title='Professor profile';a.href='/hmc/professor.do';}});
  document.querySelectorAll('.footer-inner a').forEach(a=>{if(a.getAttribute('href')==='https://www.youtube.com/'||a.getAttribute('href')==='https://youtube.com/')a.href='https://www.youtube.com/channel/UCJ8jHtSjObD5z89FeLyJuDw';});
  const reduce=matchMedia('(prefers-reduced-motion: reduce)');
  if(reduce.matches||!window.IntersectionObserver||!Element.prototype.animate)return;
