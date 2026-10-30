@@ -31,9 +31,9 @@
 </section>
 <section aria-label="Explore the laboratory" class="hmcl-home-highlights">
 <a class="hmcl-highlight hmcl-highlight-lab" href="/hmc/graduate-students.do">
-<img alt="UNIST campus" height="573" loading="lazy" src="https://hmcl-unist.github.io/gallery/2019-2020/view-of-unist/media/2019/Gallery-Sample-e1642493952909-1024x573.jpg" width="1024"/>
-<h2>LABORATORY</h2>
-<p>Meet the people behind our research in safe and intelligent mobility.</p>
+<img alt="HMCL members on Teacher’s Day" loading="lazy" src="https://hmcl-unist.github.io/gallery/2026/2026-teacher-s-day/media/2026/DSCF3682.JPG"/>
+<h2>MEMBERS</h2>
+<p>Meet our graduate students.</p>
 <span class="hmcl-view-more">View More <span aria-hidden="true">→</span></span>
 </a>
 <a class="hmcl-highlight hmcl-highlight-research" href="/hmc/research-overview.do">
@@ -57,7 +57,7 @@
 <h3>Autonomous Flight</h3><p>Safe autonomy and fault tolerant control for unmanned aircraft systems.</p>
 </a>
 <a class="hmcl-research-item" href="/hmc/cyber-physical-system-cps.do">
-<img alt="Architecture of an unmanned aircraft cyber-physical system" height="390" loading="lazy" src="https://hmcl-unist.github.io/research/autonomous-flight/media/2022/UAV-Architecture-1024x390.png" width="1024"/>
+<img alt="CPS control framework: security, safety and performance" height="389" loading="lazy" src="https://hmcl-unist.github.io/research/cps/media/2019/그림4-1024x389.png" width="1024"/>
 <h3>Cyber-Physical Systems</h3><p>Control and estimation for high-assurance, networked intelligent systems.</p>
 </a>
 </div>
@@ -65,7 +65,7 @@
 </section>
 <section aria-labelledby="publications-title" class="hmcl-section">
 <div class="hmcl-container">
-<div class="hmcl-section-heading"><h2 id="publications-title">Recent publications</h2><a href="/hmc/journal-articles.do">All publications →</a></div>
+<div class="hmcl-section-heading"><h2 id="publications-title">Recent journal articles</h2><a href="/hmc/journal-articles.do">All journal articles →</a></div>
 <div class="hmcl-home-publications">
 <article><time datetime="2026-11">November 2026</time><div><h3><a href="/hmc/journal-articles.do">Distributed Disturbance-State Observer-Based Fault-Tolerant Consensus Control for Uncertain Multi-Agent Electro-Hydraulic Servo Systems</a></h3><p>H.V.A. Truong and C. Kwon · Communications in Nonlinear Science and Numerical Simulation</p></div><a aria-label="DOI for Distributed Disturbance-State Observer-Based Fault-Tolerant Consensus Control" class="hmcl-doi" href="https://doi.org/10.1016/j.cnsns.2026.110814">DOI ↗</a></article>
 <article><time datetime="2026-10">October 2026</time><div><h3><a href="/hmc/journal-articles.do">Simplified Reinforcement Learning-Based Distributed Consensus Neural Network Control for Second-Order Uncertain Nonlinear Multi-Agent Systems</a></h3><p>H.V.A. Truong, C. Lee, and C. Kwon · Applied Mathematics and Computation</p></div><a aria-label="DOI for Simplified Reinforcement Learning-Based Distributed Consensus Neural Network Control" class="hmcl-doi" href="https://doi.org/10.1016/j.amc.2026.130095">DOI ↗</a></article>

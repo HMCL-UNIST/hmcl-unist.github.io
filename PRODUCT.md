@@ -1,30 +1,19 @@
 # HMCL website
 
-<!-- impeccable:product-schema 1 -->
+## Operating context
 
-## Platform
+Confirmed with the user on October 30, 2026: GitHub Pages is the main site.
+Use the original WordPress-export layout, restored from commit f7d86e6.
+Keep recent publications, member classifications and gallery additions.
+Apply factual, naming and link corrections separately to the UNIST CMS;
+GitHub changes do not deploy to JiniWorks.
 
-web
+## Constraints
 
-## Product Purpose
-
-Present HMCL at UNIST, its research, people, publications, projects, recruitment,
-and lab activities. Preserve actual content, photos, publication classifications,
-year headings, descending citation numbers, DOI links, and existing routes.
-
-## Operating Context
-
-Confirmed with the user: https://www.unist.ac.kr/hmc/ is the official site.
-GitHub Pages is the design test environment and source archive. Approved work
-is transferred separately to JiniWorks; GitHub changes do not deploy to the CMS.
-
-## Capabilities and Constraints
-
-Static HTML/CSS/JS, with no new framework or build dependency. Preserve the
-separate UnicornRacing website. Do not edit the CMS during GitHub design work.
-
-## Brand Commitments
-
-The user selected the new UNIST site as the reference: navy/teal, sans-serif
-type, wide layouts, rounded real photographs and member cards. Use HMCL's own
-research imagery and people instead of unrelated template imagery.
+Static HTML/CSS/JS with no framework or build dependency. Preserve the separate
+UnicornRacing website. CMS edits require their own explicit scope.
+The original GitHub layout is the design authority. Do not reactivate the
+experimental theme or introduce new labels, research claims or illustrative
+images without review. Reuse existing lab descriptions and relevant media.
+Preserve publication classifications, year headings, descending citation
+numbers, DOI links, original biographies and existing routes.

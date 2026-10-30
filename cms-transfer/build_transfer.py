@@ -51,10 +51,10 @@ def scope_css(source):
   pos=end
  return '\n'.join(result)
 
-home=BeautifulSoup((ROOT/'index.html').read_text(),'html.parser').select_one('main')
+home=BeautifulSoup((OUT/'source-home.html').read_text(),'html.parser').select_one('main')
 home['class'].append('hmc-cms-page')
 main_html=convert(home)
-research=BeautifulSoup((ROOT/'research/index.html').read_text(),'html.parser').select_one('.hmcl-research-overview')
+research=BeautifulSoup((OUT/'source-research.html').read_text(),'html.parser').select_one('.hmcl-research-overview')
 research['class'].append('hmc-cms-page')
 css=scope_css((ROOT/'assets/css/site-preview.css').read_text())
 css+='''
@@ -88,6 +88,8 @@ script='''(() => { const init=()=>{
  document.querySelectorAll('.header-inner .logo a').forEach(a=>{a.setAttribute('aria-label','HMCL home');a.title='High-assurance Mobility Control Lab.';const img=a.querySelector('img');if(img){img.src='https://hmcl-unist.github.io/media/2020/lab_Logo.jpg';img.alt='HMCL · UNIST';}});
  document.querySelectorAll('header a').forEach(a=>{if(a.textContent.trim()==='Research'&&a.getAttribute('href')==='/hmc/cyber-physical-system-cps.do')a.href='/hmc/research-overview.do';if(a.getAttribute('href')==='/hmc/research-overview.do'&&a.textContent.trim()==='Research Overview'){const item=a.closest('li');if(item)item.parentElement.prepend(item);}});
  document.querySelectorAll('a[href*="articleNo=311451"] .b-img-box img').forEach(img=>{img.src='https://hmcl-unist.github.io/gallery/2026/media/2026/2026-unist-creative-design-festival-600x450.jpg';img.alt='2026 UNIST Creative Design Festival';});
+ document.querySelectorAll('.main-left a').forEach(a=>{if(a.textContent.trim()==='More Informaiton'){a.textContent='Professor profile';a.href='/hmc/professor.do';}});
+ document.querySelectorAll('.footer-inner a').forEach(a=>{if(a.getAttribute('href')==='https://www.youtube.com/'||a.getAttribute('href')==='https://youtube.com/')a.href='https://www.youtube.com/channel/UCJ8jHtSjObD5z89FeLyJuDw';});
  const reduce=matchMedia('(prefers-reduced-motion: reduce)');
  if(reduce.matches||!window.IntersectionObserver||!Element.prototype.animate)return;
  const observer=new IntersectionObserver(items=>{for(const item of items){if(!item.isIntersecting)continue;observer.unobserve(item.target);if(!reduce.matches)item.target.animate([{opacity:.35,transform:'translateY(16px)'},{opacity:1,transform:'translateY(0)'}],{duration:450,delay:Number(item.target.dataset.hmcDelay||0),easing:'cubic-bezier(.16,1,.3,1)'});}},{threshold:.08});
@@ -100,6 +102,7 @@ end=original.index('\n\t<footer>',start)
 main_template=original[:start]+'\t\t<div class="main-right">\n'+main_html+'\n\t\t</div>\n\t</div>'+original[end:]
 footer=(BACKUP/'footer.jsp').read_text().replace('School of Urban &amp;<br class="pc-hide"> Environmental Engineering','Department of Mechanical Engineering').replace('School of Urban &amp;Environmental Engineering','Department of Mechanical Engineering').replace('+82-52-217-2798','052-217-2433').replace('tel:052-217-6333','tel:052-217-2433').replace('052-217-6333','052-217-2433').replace('unist@unist.ac.kr','kwonc@unist.ac.kr').replace('COPYRIGHT 2025','COPYRIGHT 2026').replace('ALL RIGHTS RESEVERED.','ALL RIGHTS RESERVED.')
 footer=re.sub(r'School of Urban &amp;\s*(?:<br[^>]*>\s*)?Environmental Engineering','Department of Mechanical Engineering',footer)
+footer=footer.replace('<a href="#" title="새창열림">Department of Mechanical Engineering</a>', '<a href="https://me.unist.ac.kr/me/index.do" target="_blank" rel="noopener" title="새창열림">Department of Mechanical Engineering</a>')
 footer+='\n<style>\n'+css+'\n</style>\n<script>\n'+script+'\n</script>'
 files={'main-template.jsp':main_template,'footer.jsp':footer,'research-overview.html':convert(research),'shared.css':css,'shared.js':script}
 print('*** Begin Patch')

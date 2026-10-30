@@ -1,6 +1,7 @@
 # HMC CMS transfer — 2026-10-29
 
-Official website: https://www.unist.ac.kr/hmc/
+Main website: https://hmcl-unist.github.io/
+Separately maintained CMS: https://www.unist.ac.kr/hmc/
 
 This folder archives the approved GitHub design adapted to the CMS. The files
 were saved through the JiniWorks editor, not deployed by a GitHub push.
@@ -12,8 +13,17 @@ were saved through the JiniWorks editor, not deployed by a GitHub push.
 - `research-overview.html`: existing CPS purpose paragraphs and diagram plus
   existing AD/AF topic names. No new research claims or framework.
 - `shared.css` and `shared.js`: extracted reviewable source for the footer additions.
-- `build_transfer.py`: generates these artifacts from the approved static site
-  and the locally backed-up CMS originals. Existing CMS URLs are mapped explicitly.
+- `source-home.html` and `source-research.html`: frozen CMS inputs, independent
+  of GitHub's restored original layout.
+- `build_transfer.py`: generates these artifacts from those inputs and the
+  locally backed-up CMS originals. Existing CMS URLs are mapped explicitly.
+
+October 30 corrections applied through JiniWorks: replace the misleading
+LABORATORY/member card with a Members card and relevant photograph, replace the
+UAV architecture thumbnail with the existing CPS diagram, label journal links
+accurately, correct the professor-profile button, connect the department URL,
+and point YouTube to the existing Unicorn Racing channel. Before-edit backups:
+`/home/hmcl/cms-backups/20261030-before-rollback/`.
 
 Research Overview is a new CMS page at `/hmc/research-overview.do`, using the
 existing `common.jsp` head and `sub-template.jsp` layout, linked to menu 6185.
