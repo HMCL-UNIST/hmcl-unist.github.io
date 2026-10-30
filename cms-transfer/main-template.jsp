@@ -77,9 +77,9 @@
 <div class="hmcl-container">
 <div class="hmcl-section-heading"><h2 id="gallery-title">Life at the lab</h2><a href="/hmc/professor/gallery.do">View gallery →</a></div>
 <div class="hmcl-event-grid">
+<a class="hmcl-event" href="/hmc/professor/gallery.do?mode=view&amp;articleNo=311451"><img alt="Participants and RoboRacer vehicles at the 2026 UNIST Creative Design Festival" height="450" loading="lazy" src="https://hmcl-unist.github.io/gallery/2026/media/2026/2026-unist-creative-design-festival-600x450.jpg" width="600"/><h3>2026 UNIST Creative Design Festival</h3><p>October 2026</p></a>
 <a class="hmcl-event" href="/hmc/professor/gallery.do?mode=view&amp;articleNo=308346"><img alt="HMCL at the 2026 IFAC RoboRacer event" height="300" loading="lazy" src="https://hmcl-unist.github.io/gallery/2026/media/2026/2026-ifac-roboracer-300x300.jpg" width="300"/><h3>2026 IFAC Roboracer</h3><p>August 2026</p></a>
 <a class="hmcl-event" href="/hmc/professor/gallery.do?mode=view&amp;articleNo=308335"><img alt="Lab members having lunch with Professor Kwon" height="300" loading="lazy" src="https://hmcl-unist.github.io/gallery/2026/media/2026/lunch1-300x300.jpg" width="300"/><h3>Lunch with Professor</h3><p>July 2026</p></a>
-<a class="hmcl-event" href="/hmc/professor/gallery.do?mode=view&amp;articleNo=308334"><img alt="Participants at the IFAC Bootcamp" height="300" loading="lazy" src="https://hmcl-unist.github.io/gallery/2026/media/2026/2026-ifac-bootcamp-300x300.jpg" width="300"/><h3>2026 IFAC Bootcamp</h3><p>July 2026</p></a>
 </div>
 </div>
 </section>

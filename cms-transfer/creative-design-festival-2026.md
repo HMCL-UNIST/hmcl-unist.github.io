@@ -8,5 +8,8 @@
 - Published copies: max 2400px, JPEG quality 87, progressive, without EXIF.
 - Existing gallery template and routes retained; gallery index and home recent albums updated.
 - CMS images link to the same public GitHub files because browser file upload is unavailable.
+- CMS article: `/hmc/professor/gallery.do?mode=view&articleNo=311451`.
+- CMS list thumbnail uses the same representative image through the shared footer script;
+  no CMS image attachment was uploaded. Homepage recent albums also link to this article.
 
 Sources: [UNIST event notice](https://www.unist.ac.kr/unist/etc/notification/notification.do?articleNo=311137&mode=view), [English reporting](https://view.asiae.co.kr/en/article/2026103013042021448).
